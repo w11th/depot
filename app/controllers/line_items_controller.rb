@@ -1,6 +1,9 @@
 class LineItemsController < ApplicationController
   include Cartable
+  include AccessTimesTrackable
+
   before_action :set_cart, only: [:create]
+  after_action :clear_counter, only: [:create]
 
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
