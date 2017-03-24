@@ -51,4 +51,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+  test "should get exactly number of products on index" do
+    get products_url
+    assert_select 'tr', Product.count
+  end
 end

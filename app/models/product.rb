@@ -1,10 +1,15 @@
 class Product < ApplicationRecord
-  validates :title, :description, :image_url, presence: true
-  validates :title, uniqueness: { message: "should be unique" }
-  validates :title, length: { minimum: 10, message: "is too short" }
-  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
-  validates :image_url, allow_blank: true, format: {
-              with: %r{\.(gif|jpg|png)\Z}i,
+  validates :title,
+            presence: true,
+            uniqueness: { message: "should be unique" },
+            length: { maximum: 20, message: "is too long" }
+  validates :description, presence: true
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 0.01 }
+  validates :image_url,
+            presence: true,
+            format: {
+              allow_blank: true,
+              with: /\.(gif|jpg|png)\Z/i,
               message: 'must be a URL for GIF, JPG or PNG image.'
             }
 end

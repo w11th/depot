@@ -3,46 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .stores {
   h1 {
+    margin: 0;
+    border-bottom: 3px dotted #77d;
+    padding-bottom: .5em;
     color: #226;
     font: 150% sans-serif;
-    border-bottom: 3px dotted #77d;
-    margin: 0;
-    padding-bottom: .5em;
   }
 
   .entry {
-    border-bottom: 1px dotted #77d;
     margin-top: 1em;
+    border-bottom: 1px dotted #77d;
     min-height: 100px;
     overflow: auto;
 
     img {
-      margin-bottom: 5px;
-      margin-right: 5px;
       position: absolute;
+      margin-right: 5px;
+      margin-bottom: 5px;
       width: 80px;
     }
 
     h3 {
+      margin-top: 0;
+      margin-bottom: 2px;
+      margin-left: 100px;
       color: #227;
       font-family: sans-serif;
       font-size: 120%;
-      margin-bottom: 2px;
-      margin-left: 100px;
-      margin-top: 0;
+      a {
+
+        &:link {
+          text-decoration: none;
+        }
+
+        &:active,
+        &:hover{
+          background-color: inherit;
+          color: #337;
+        }
+      }
     }
 
     p,
     div.price-line {
+      margin-top: .5em;
       margin-bottom: .8em;
       margin-left: 100px;
-      margin-top: .5em;
     }
 
     .price {
+      margin-right: 3em;
       color: #44a;
       font-weight: bold;
-      margin-right: 3em;
     }
   }
 }
