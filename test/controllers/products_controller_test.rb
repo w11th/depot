@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @product = products(:one)
+    @product = products(:ruby)
     @update = {
       title: 'Lorem Ipsum',
       description: 'Wibbles are fun!',
@@ -59,7 +59,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should fail to delete product in cart" do
     assert_difference('Product.count', 0) do
-      delete product_url(products(:two))
+      delete product_url(products(:rails))
     end
 
     assert_redirected_to products_url

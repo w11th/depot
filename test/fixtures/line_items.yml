@@ -1,9 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product: two
-  cart: one
+  product: mobile
+  cart: not_empty_cart
+  price: 26.00
 
 two:
-  product: two
-  cart: two
+  product: rails
+  cart: not_empty_cart
+  price: 45.00
+
