@@ -2,10 +2,10 @@ class LineItemsController < ApplicationController
   include Cartable
   include AccessTimesTrackable
 
-  before_action :set_cart, only: [:create, :destroy]
+  before_action :set_cart, only: [:create, :destroy, :increase, :decrease]
   after_action :clear_counter, only: [:create]
 
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy, :increase, :decrease]
 
   # GET /line_items
   # GET /line_items.json
@@ -35,8 +35,10 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to stores_index_url }
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
+      else
         format.html { render :new }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
@@ -62,8 +64,25 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to @cart, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to stores_index_url, notice: 'Line item was successfully destroyed.' }
+      format.js
       format.json { head :no_content }
+    end
+  end
+
+  def increase
+    @line_item.increase_quantity
+    respond_to do |format|
+      format.html { redirect_to stores_index_url }
+      format.js { @current_item = @line_item }
+    end
+  end
+
+  def decrease
+    @line_item.decrease_quantity
+    respond_to do |format|
+      format.html { redirect_to stores_index_url }
+      format.js { @current_item = @line_item }
     end
   end
 

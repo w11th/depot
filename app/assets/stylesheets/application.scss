@@ -67,13 +67,32 @@ body>td {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     background-color: #141;
     padding: 1em 2em;
     color: #bfb;
 
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color: white;
+
+      table {
+        border-top: 1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
     ul {
       padding: 0;
+      flex-grow: 1;
       li {
         list-style: none;
         a {

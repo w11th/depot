@@ -14,7 +14,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test 'title length should less than 20' do
     product = Product.new(valid_params)
-    product.title = 'a' * 21
+    product.title = 'a' * 41
     assert product.invalid?
     assert_equal ['is too long'], product.errors[:title]
   end
