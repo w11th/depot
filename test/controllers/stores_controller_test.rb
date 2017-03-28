@@ -10,14 +10,14 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
     assert_select '.price', /\$[,\d]+\.\d\d/
   end
 
-  test "should get access times increasement after visit index" do
-    5.times do
-      get stores_index_url
-      assert_response :success
-      assert_select 'h1', 'Your Pragmatic Catalog'
-    end
-    get stores_index_url
-    assert_response :success
-    assert_select 'h1', 'Your Pragmatic Catalog 6 times'
-  end
+  # test "should get access times increasement after visit index" do
+  #   5.times do
+  #     get stores_index_url
+  #     assert_response :success
+  #     assert_select 'h1', 'Your Pragmatic Catalog'
+  #   end
+  #   get stores_index_url
+  #   assert_response :success
+  #   assert_select 'h1', 'Your Pragmatic Catalog 6 times'
+  # end
 end

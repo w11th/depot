@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :orders
   root 'stores#index', as: 'stores_index'
 
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
+
   resources :carts
   resources :line_items do
     member do

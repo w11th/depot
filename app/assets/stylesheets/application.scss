@@ -109,6 +109,46 @@ body>td {
   }
 }
 
+.depot-form {
+  filedset {
+    background: #efe;
+
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+
+    div {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  form {
+    label {
+      display: block;
+      float: left;
+      margin-right: 0.1em;
+      padding-top: 0.2em;
+      width: 5em;
+      text-align: right;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+
+    br {
+      display: none
+    }
+  }
+}
+
 @media all and (max-width: 800px) {
   #columns {
     flex-direction: column-reverse;
