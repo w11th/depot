@@ -10,3 +10,7 @@ two:
   cart: not_empty_cart
   price: 45.00
 
+three:
+  product: rails
+  order: one
+  price: 45.00
