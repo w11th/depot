@@ -110,7 +110,7 @@ body>td {
 }
 
 .depot-form {
-  filedset {
+  fieldset {
     background: #efe;
 
     legend {
@@ -135,7 +135,9 @@ body>td {
       text-align: right;
     }
 
-    select, textarea, input {
+    select,
+    textarea,
+    input {
       margin-left: 0.5em;
     }
 
@@ -144,7 +146,7 @@ body>td {
     }
 
     br {
-      display: none
+      display: none;
     }
   }
 }
@@ -163,4 +165,9 @@ body>td {
   #banner .title {
     display: none;
   }
+}
+
+.locale {
+  float: right;
+  margin: -.25em .1em;
 }

@@ -25,9 +25,9 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 
     perform_enqueued_jobs do
       post '/orders', params: { order: { name: 'Dave Thomas',
-                                          address: '123 The Stream',
-                                          email: 'dave@example.com',
-                                          pay_type: 'Check' } }
+                                         address: '123 The Stream',
+                                         email: 'dave@example.com',
+                                         pay_type: 'Check' } }
       follow_redirect!
       assert_response :success
       assert_select 'h1', 'Your Pragmatic Catalog'
