@@ -31,7 +31,7 @@
 
   <div class="field">
     <%= f.label :paty_type, t('.pay_type') %>
-    <%= f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method' %>
+    <%= f.select :pay_type, Order.pay_types.keys.map { |key| [t(".pay_type.#{key}"), key] }, prompt: 'Select a payment method' %>
   </div>
 
   <%= hidden_field_tag 'locale', I18n.locale %>
